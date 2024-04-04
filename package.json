@@ -20,6 +20,8 @@
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
     "@popmotion/popcorn": "^0.4.4",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.3",
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",

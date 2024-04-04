@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <BackgroundContext.Provider value={{ background, setBackground }}>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
     </BackgroundContext.Provider>
   );
 }
