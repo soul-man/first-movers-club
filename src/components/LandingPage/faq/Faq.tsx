@@ -27,12 +27,16 @@ const Faq = () => {
     return (
       <>
         <p className="mb-3">
-          NFT stands for "Non-Fungible Token." Think of it like a special, one-of-a-kind digital certificate for 
-          something you really like.
+        A Non-Fungible Token (NFT) is a digital asset that represents ownership or proof of authenticity 
+        of a unique item or piece of content, typically stored on a blockchain. 
+        </p>
+        <p className="mb-3">
+          Unlike cryptocurrencies such as Bitcoin or Ethereum, which are fungible and can be exchanged on a 
+          one-to-one basis, each NFT is distinct and cannot be replicated or exchanged equivalently. 
         </p>
         <p>
-          It's like having a digital badge that says, "This is the only one in the whole world." Of course the 
-          image can be copied, but there is always the possibility of checking the original.
+          This uniqueness makes NFTs ideal for certifying ownership of digital and physical 
+          items, including artwork, music, videos, virtual real estate, collectibles, and more.
         </p>
       </>
     );
@@ -90,7 +94,7 @@ const Faq = () => {
   const questions = [
     {
       id: 0,
-      question: "What is a NFT?",
+      question: "What are NFTs?",
       answer: <Q1 />
     },
     {
@@ -118,11 +122,28 @@ const Faq = () => {
 
 
   return (
-    <div id="frequently-asked-questions" className="bg-[#2cbd21] flex flex-col py-20">
-      <h2 className="text-center text-6xl mb-3">FAQ</h2>
-      <p className="text-center text-2xl text-white/70">Frequently Asked Questions</p>
-      {/* <Searchbar onSearchChange={handleSearchChange} /> */}
-      <section className="faq">
+    <div id="frequently-asked-questions" className="bg-[#4247d7] flex flex-col py-20">
+      <h2 className="
+        !leading-[2.7rem] 
+        sm:!leading-[3.5rem] 
+        md:!leading-[4.5rem] 
+        lg:!leading-[4rem] 
+        xl:!leading-[5.3rem] 
+        2xl:!leading-[6rem] 
+        text-center 
+        text-5xl
+        sm:text-5xl 
+        md:text-6xl
+        lg:text-6xl
+        xl:text-7xl
+        2xl:text-8xl
+        font-bold 
+        mb-2"
+      >
+        FAQ
+      </h2>
+      <p className="text-center text-2xl text-white/70 mb-20">Frequently Asked Questions</p>
+      <section className="faq ">
         {questions.map((item: any, index: number) => (
           <Question key={index} question={item.question} answer={item.answer} />
         ))}

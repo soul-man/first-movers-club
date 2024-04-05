@@ -63,9 +63,9 @@ const Personality = () => {
     const url = "images/bg-scenes/bg-tara.jpg";
     return (
         <>
-            <div id="personality" className='w-full bg-[#1227C2] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-500/50 from-20% via-blue-700/80 via-50% to-blue-900/30 to-90%'>
+            <div id="personality" className='w-full bg-[#1227C2]'>
                 <div className='flex items-center justify-center'>
-                        <div className="px-5 2xl:px-0 max-w-screen-xl 2xl:max-w-screen-2xl py-20">
+                        <div className="px-5 max-w-screen-xl 2xl:max-w-screen-2xl py-20">
                             <div className="flex items-center flex-col gap-4">
 
                                 <div className='mb-20'>
@@ -85,16 +85,18 @@ const Personality = () => {
                                         2xl:text-[7rem]
                                         font-bold 
                                         mb-12"
-                                    >Unique personalities</h2>
-                                    <div className="text-3xl mb-7 !leading-[2.7rem] ">
-                                        <span className='px-2 py-0.5 bg-green-400 text-black text-3xl rounded-lg font-bold'>Level 1</span>{' '}
+                                    >
+                                        Unique personalities
+                                    </h2>
+                                    <div className="text-xl md:text-3xl mb-7 !leading-[2.3rem] md:!leading-[2.7rem]">
+                                        <span className='px-2 py-0.5 bg-green-400 text-black rounded-lg font-bold'>Level 1</span>{' '}
                                         The First Movers are made of <b>320+ Traits</b> inspired by the early days of cryptocurrencies. 
                                         Within millions of possible combinations, we picked 
-                                        <span className='mx-2 px-2 py-0.5 bg-white text-black text-3xl rounded-lg font-bold'>1,111</span>
+                                        <span className='mx-2 px-2 py-0.5 bg-white text-black rounded-lg font-bold'>1,111</span>
                                         to make every First Mover a masterpiece.
                                     </div>
-                                    <p className="text-3xl !leading-[3rem]">
-                                        <span className='px-2 py-0.5 bg-green-400 text-black text-3xl rounded-lg font-bold'>Level 2</span>{' '}
+                                    <p className="text-xl md:text-3xl mb-5 !leading-[2.3rem] md:!leading-[2.7rem]">
+                                        <span className='px-2 py-0.5 bg-green-400 text-black rounded-lg font-bold'>Level 2</span>{' '}
                                         To make your First Mover even more unique, every NFT has its own unique name. 
                                         The name adds an extra layer of distinction to your First Mover.
                                     </p>

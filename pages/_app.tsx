@@ -9,7 +9,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const [background, setBackground] = useState({
       sliderBg: "intro-fm-yellow",
-      bg: 'global-fm-yellow'
+      bg: 'global-fm-yellow',
+      text: 'text-black'
   });
 
   return (

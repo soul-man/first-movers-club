@@ -3,6 +3,7 @@ import * as React from 'react';
 import Layout from '@/components/layout';
 import Intro from '@/components/LandingPage/Intro';
 import GridSlider from '@/components/LandingPage/slider/GridSlider';
+import Mint from '@/components/LandingPage/Mint';
 import Collection from '@/components/LandingPage/Collection';
 import Line from '@/components/LandingPage/Line';
 import Personality from '@/components/LandingPage/Peronality';
@@ -15,6 +16,7 @@ export default function HomePage() {
     <Layout>
       <Intro />
       <GridSlider/>
+      <Mint />
       <Collection />
       <Line />
       <Personality />

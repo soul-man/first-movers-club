@@ -9,37 +9,43 @@ const IMAGES = [
         id: 0,
         imageSrc: "/images/intro-firstmover-hodl.png",
         sliderBg: "intro-fm-yellow",
-        bg: "global-fm-yellow"
+        bg: "global-fm-yellow",
+        text: "text-black"
     },
     {
         id: 1,
         imageSrc: "/images/intro-firstmover-cz.png",
         sliderBg: "intro-fm-red",
-        bg: "global-fm-red"
+        bg: "global-fm-red",
+        text: "text-white"
     },
     {
         id: 2,
-        imageSrc: "/images/intro-firstmover-rekt.png",
-        sliderBg: "intro-fm-pink",
-        bg: "global-fm-pink"
+        imageSrc: "/images/intro-firstmover-miner.png",
+        sliderBg: "intro-fm-yellow",
+        bg: "global-fm-yellow",
+        text: "text-black"
     },
     {
         id: 3,
-        imageSrc: "/images/intro-firstmover-btfd.png",
-        sliderBg: "intro-fm-red",
-        bg: "global-fm-red"
+        imageSrc: "/images/intro-firstmover-rekt.png",
+        sliderBg: "intro-fm-pink",
+        bg: "global-fm-pink",
+        text: "text-white"
     },
     {
         id: 4,
-        imageSrc: "/images/intro-firstmover-miner.png",
-        sliderBg: "intro-fm-yellow",
-        bg: "global-fm-yellow"
+        imageSrc: "/images/intro-firstmover-btfd.png",
+        sliderBg: "intro-fm-blue-light",
+        bg: "global-fm-blue-light",
+        text: "text-white"
     },
     {
         id: 5,
         imageSrc: "/images/intro-firstmover-gangsta.png",
-        sliderBg: "intro-fm-green",
-        bg: "global-fm-green"
+        sliderBg: "intro-fm-red",
+        bg: "global-fm-red",
+        text: "text-white"
     }
   ];
 
@@ -73,6 +79,7 @@ const Slider = () => {
     const index = wrap(0, IMAGES.length, imageCount + swipeDirection)
     background.sliderBg = IMAGES[index].sliderBg;
     background.bg = IMAGES[index].bg;
+    background.text = IMAGES[index].text;
     setBackground({...background});
   }
 
@@ -96,6 +103,7 @@ const Slider = () => {
     setImageCount([imageId, changeDirection])
     background.sliderBg = IMAGES[imageId].sliderBg;
     background.bg = IMAGES[imageId].bg;
+    background.text = IMAGES[imageId].text;
     setBackground({...background});
   }
 

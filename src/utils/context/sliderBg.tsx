@@ -3,7 +3,8 @@ import { createContext } from "react";
 interface background {
     background: {
         sliderBg: string,
-        bg: string
+        bg: string,
+        text: string
     };
     setBackground: any;
 }

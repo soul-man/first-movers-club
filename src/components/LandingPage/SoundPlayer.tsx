@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import useSound from "use-sound";
 import BackgroundContext from '@/utils/context/sliderBg';
-
-// import airdrop from '../../assets/music/airdrop.mp3';
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
@@ -90,8 +88,8 @@ export default function Player() {
         </button>
     </div>
 
-      <div className="flex flex-col">
-      <div className="text-[12px] mb-[0px]">
+      <div className={'flex flex-col duration-300 transition-all ' + (background.text)}>
+        <div className="text-[12px] mb-[0px]">
             Lil Bubble - Airdrop
         </div>
         <div className="flex flex-row justify-between !leading-[1rem] gap-1">

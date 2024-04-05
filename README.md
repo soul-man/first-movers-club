@@ -1,12 +1,7 @@
 <div align="center">
-  <h2>Mint Heaven</h2>
-  <p>Mint NFTs and grow your footprint for a higher airdrop chance</p>
+  <h2>First Movers Club - Backend</h2>
+  <p>Generative NFT Collection</p>
 </div>
-
-## Features
-
-- ⚡️ Mint NFTs
-- 💖 Multiple Blockchains
 
 ## Run the development server
 

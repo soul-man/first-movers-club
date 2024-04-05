@@ -1,5 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import BackgroundContext from '@/utils/context/sliderBg';
+import { starsMarketPrice } from "@/utils/starsMarketPrice";
 import { TbAlpha } from "react-icons/tb";
 
 export default function Header() {
@@ -7,8 +8,18 @@ export default function Header() {
   const {background} = useContext(BackgroundContext);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  return (
+  const [starsPrice, setStarsPrice] = useState<any>(0);
 
+  const loadPrice = async () => {
+      const starsPrice = await starsMarketPrice();
+      setStarsPrice(starsPrice);
+  }
+
+  useEffect(() => {
+      loadPrice();
+  }, []);
+
+  return (
     <nav className="xl:px-0 w-full">
       <div className="max-w-screen-xl 2xl:max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-5">
       
@@ -21,10 +32,15 @@ export default function Header() {
 
           <div className="flex z-10">
             <div className="items-center justify-between hidden w-full lg:flex md:w-auto" id="navbar-cta">
-              <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 bg-transparent md:space-x-4 md:flex-row md:mt-0 md:border-0">
+              <ul className="flex flex-col items-center font-medium p-4 md:p-0 mt-4 bg-transparent lg:space-x-2 xl:space-x-4 md:flex-row md:mt-0 md:border-0">
+                <li className="flex align-center">
+                  <a href='#mint' target="_self" className="py-2 px-1 text-lg text-blue-100 hover:underline" >
+                    MINT
+                  </a>
+                </li>
                 <li className="flex align-center">
                   <a href='#nft-collection' target="_self" className="py-2 px-1 text-lg text-blue-100 hover:underline" >
-                    NFT-COLLECTION
+                    COLLECTION
                   </a>
                 </li>
                 <li className="flex align-center">
@@ -47,11 +63,23 @@ export default function Header() {
                     FAQ
                   </a>
                 </li>
+                <li className="flex align-center">
+                  <a href='https://coinmarketcap.com/currencies/stargaze/' target="_new" className="py-2 px-1 text-lg text-blue-100 hover:underline" >
+                    <div className="flex flex-row justify-center items-center gap-2 bg-[#1e39c2] px-2 py-1 rounded-lg">
+                      <span className="text-lg">${starsPrice}</span>
+                      <span className="bg-white rounded-full p-1">
+                          <img src="./images/stars.png" className="w-[18px]"/>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+
+
               </ul>
             </div>
           </div>
 
-          <div className="flex z-10 lg:hidden">
+          <div className="flex z-20 lg:hidden">
           <div className="items-center justify-between hidden w-full md:w-auto" id="navbar-cta">
           </div>
           <div className="flex space-x-3 md:space-x-0">
@@ -59,7 +87,6 @@ export default function Header() {
                 onClick={() => setMobileOpen(prevMobileOpen => !prevMobileOpen)} 
                 type="button" 
                 className="
-                  inline-flex 
                   items-center 
                   p-1 
                   w-10 
@@ -69,9 +96,7 @@ export default function Header() {
                   text-white 
                   rounded-lg 
                   hover:bg-blue-700/20 
-                  focus:outline-none 
-                  focus:ring-1 
-                  focus:ring-blue-400" 
+                  " 
                 >
                 <span className="sr-only">Open main menu</span>
                 <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -84,11 +109,11 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden w-full text-center min-h-[calc(100vh-80px)]">
+        <div className="absolute top-0 lg:hidden w-full text-center bg-blue-500 min-h-[100vh] z-10">
           <div className="w-full">
             <ul className="font-medium p-4 md:p-0 bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
               <li>
-                <a href='./mint-nfts' target="_self" className="py-2 text-2xl text-white hover:text-blue-400 active:text-blue-500 bg-transparent" >
+                <a href='#mint' target="_self" className="py-2 text-2xl text-white hover:text-blue-400 active:text-blue-500 bg-transparent" >
                   Mint
                 </a>
               </li>

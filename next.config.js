@@ -8,10 +8,8 @@ const nextConfig = {
   },
   // output: 'export',
   env: {
-    NEXT_THIRDWEB_CLIENT_ID: process.env.NEXT_THIRDWEB_CLIENT_ID,
-    NEXT_INFURA_API_KEY: process.env.NEXT_INFURA_API_KEY,
-    OPEN_AI_SECRET: process.env.OPEN_AI_SECRET,
-    XATA_API_KEY: process.env.XATA_API_KEY,
+    FM_BASE_URL: process.env.FM_BASE_URL,
+    FM_API_KEY: process.env.FM_API_KEY
   },
   eslint: {
     dirs: ['src'],

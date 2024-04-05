@@ -10,9 +10,7 @@ import BackgroundContext from '@/utils/context/sliderBg';
 
 const Intro = () => {
   const {background } = useContext(BackgroundContext);
-
-  console.log(background)
-
+  
   return (
     <>
           {/* <div className='w-full bg-[#1e39c2] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-500/50 from-20% via-blue-700/80 via-50% to-blue-700/10 to-90%'> */}
@@ -71,7 +69,7 @@ const Intro = () => {
 
                     <div className='flex flex-row items-center gap-10'>
 
-                    <a href="#_" className={'relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black text-2xl transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 group ' + background.bg}>
+                    <a href="#mint" className={'relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black text-2xl transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 group ' + background.bg}>
                       <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-green-500 group-hover:h-full"></span>
                       <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
                         <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -82,7 +80,7 @@ const Intro = () => {
                       <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:font-bold group-hover:text-white">MINT SOON</span>
                     </a>
 
-                      <a href="https://www.stargaze.zone" target='_new'><img src="https://www.stargaze.zone/logo.svg" className="w-24 md:w-30"/></a>
+                      <a href="https://www.stargaze.zone" target='_new'><img src="https://www.stargaze.zone/logo.svg" className="w-24 md:w-[150px]"/></a>
                     </div>
 
                     <div className='

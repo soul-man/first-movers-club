@@ -1,19 +1,17 @@
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  will-change: transform, opacity;
+}
 
+.image:hover {
+  cursor: grab;
+}
 
-  .image {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    will-change: transform, opacity;
-  }
-
-  .image:hover {
-    cursor: grab;
-  }
-
-  .image:active {
-    cursor: grabbing;
-  }
+.image:active {
+  cursor: grabbing;
+}
