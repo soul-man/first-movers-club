@@ -26,7 +26,7 @@ const Mint = () => {
                                 <a href="https://www.stargaze.zone" target='_new'><img src="https://www.stargaze.zone/logo.svg" className="w-[200px] md:w-[300px] lg:w-[330px]"/></a>
                             </div>
                             <div className="hidden md:flex flex-col md:flex-row ">
-                                <p className="txt-small center opacity-75">Mint up to <b>5 NFTs/Wallet</b></p>
+                                <p className="text-lg center">Mint up to <b>5 NFTs/Wallet</b></p>
                             </div>
                         </div>
                         <div className="w-12/12 sm:w-5/12 px-20 sm:px-0">
@@ -34,14 +34,14 @@ const Mint = () => {
                                 <h3 className="text-3xl md:text-4xl text-blue-400">PRICE:</h3>
                                 <div className="flex flex-row justify-center items-center gap-4">
                                     <span className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-400 font-bold">111 STARS</span>
-                                    <span className="bg-white/80 rounded-full p-1">
+                                    <span className="bg-white rounded-full p-1">
                                         <img src="./images/stars.png" className="w-[30px] md:w-[48px]"/>
                                     </span>
                                 </div>
                             </div>
-                            <div className="hidden md:flex flex-col md:flex-row ">
-                                <p className="opacity-75">Market price: <b>${(starsPrice * 111).toFixed(2)}</b></p>
-                                <a className="flex flex-row items-center gap-2" href="https://www.stargaze.zone" target='_new'>coinmarketcap <PiLinkSimpleLight /></a>
+                            <div className="hidden text-lg md:flex flex-col md:flex-row ">
+                                <p>Market price: <b>${(starsPrice * 111).toFixed(2)}</b></p>
+                                <a className="flex flex-row items-center gap-2" href="https://coinmarketcap.com/currencies/stargaze/" target='_new'>coinmarketcap <PiLinkSimpleLight /></a>
                             </div>
                         </div>
                     </div>
