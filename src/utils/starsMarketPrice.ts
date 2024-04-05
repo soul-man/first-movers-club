@@ -2,8 +2,6 @@ import axios from 'axios';
 import { endpoints } from '@/utils/config';
 
 export const starsMarketPrice = async () => {
-
-  console.log(endpoints)
   try {
     let config = {
       headers: {
