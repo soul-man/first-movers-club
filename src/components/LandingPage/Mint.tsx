@@ -19,6 +19,38 @@ const Mint = () => {
         <div id="mint" className='w-full bg-[#7c12c2]'>
             <div className='flex items-center justify-center'>
                 <div className='px-5 max-w-screen-xl 2xl:max-w-screen-2xl py-28 w-[100%] border-b-[8px] border-dashed border-indigo-500/30'>
+                    
+                <h2 className="
+                                !leading-[2.7rem] 
+                                sm:!leading-[3.5rem] 
+                                md:!leading-[4.5rem] 
+                                lg:!leading-[4rem] 
+                                xl:!leading-[5.3rem] 
+                                2xl:!leading-[6rem] 
+                                text-center 
+                                text-5xl
+                                sm:text-6xl 
+                                md:text-[5rem]
+                                lg:text-7xl
+                                xl:text-8xl
+                                2xl:text-[7rem]
+                                font-bold 
+                                mb-2"
+                        >
+                            When lambo?
+                        </h2>
+                        <p className="
+                            mb-10 
+                            text-xl 
+                            sm:text-2xl 
+                            md:text-3xl 
+                            text-center 
+                            !leading-[2.3rem] 
+                            md:!leading-[2.7rem]"
+                        >
+                            - a date is yet to be announced -
+                        </p>
+                    
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-10">
                         <div className="w-12/12 sm:w-5/12">
                             <div className="flex flex-col justify-center items-center gap-2 bg-purple-950/20 p-2 py-10 rounded-lg mb-2">
