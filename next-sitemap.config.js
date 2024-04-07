@@ -2,7 +2,7 @@
  * @type {import('next-sitemap').IConfig}
  */
 module.exports = {
-  siteUrl: 'https://mintheaven.vercel.app/',
+  siteUrl: 'https://www.first-movers.club',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
