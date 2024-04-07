@@ -2,11 +2,11 @@ const Rarity = () => {
     const url = "images/bg-scenes/bg-rarity.jpg";
     return (
         <>
-            <div id="rarity" className="w-full bg-cover" style={{ backgroundImage: `url(${url})`}}>
+            <div id="rarity" className="w-full bg-contain md:bg-cover" style={{ backgroundImage: `url(${url})`}}>
 
                 <div className='flex items-center justify-center min-h-[calc(100vh-70px)]'>
-                    <div className='py-36 px-10 2xl:px-0 max-w-screen-lg'>
-                        <div className='bg-blue-600 border-blue-300 rounded-md border-[12px] p-5 md:p-10 mb-5'>
+                    <div className='py-14 md:py-28 px-10 sm:px-20 2xl:px-0 max-w-screen-lg'>
+                        <div className='bg-blue-600 border-blue-300 rounded-md border-[6px] md:border-[12px] p-5 md:p-10 mb-5'>
                             <div className="mb-10">
                                 <h2 className="text-left text-2xl md:text-5xl mb-5 uppercase">NFT Collection info</h2>
                                 <p className="text-left text-xl md:text-2xl font-light md:font-extralight">

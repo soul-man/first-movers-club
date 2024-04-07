@@ -9,10 +9,14 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [starsPrice, setStarsPrice] = useState<any>(0);
+  const [starsLoaded, setStarsLoaded] = useState<boolean>(false);
+
 
   const loadPrice = async () => {
       const starsPrice = await starsMarketPrice();
       setStarsPrice(starsPrice);
+      setStarsLoaded(true);
+
   }
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function Header() {
       <div className="max-w-screen-xl 2xl:max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-5">
       
           <div className="flex flex-row items-center space-x-3">
-            <span className={'px-1 py-1 text-2xl md:text-3xl rounded-xl text-black/90 ' + (background.bg)}><TbAlpha /></span>
+            <span className={'px-1 py-1 text-3xl rounded-xl text-black/90 ' + (background.bg)}><TbAlpha /></span>
             <a href="./">
               <span className="text-2xl md:text-3xl font-semibold text-white">FIRST MOVERS</span>
             </a>
@@ -64,9 +68,11 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="flex align-center">
-                  <a href='https://coinmarketcap.com/currencies/stargaze/' target="_new" className="py-2 px-1 text-lg text-blue-100 hover:underline" >
-                    <div className="flex flex-row justify-center items-center gap-2 bg-[#1e39c2] px-2 py-1 rounded-lg">
-                      <span className="text-lg">${starsPrice}</span>
+                  <a href='https://coinmarketcap.com/currencies/stargaze/' target="_new" className={'py-2 px-1 text-lg ' + (background.text)} >
+                    <div className={'flex flex-row justify-center items-center gap-2 hover:text-white hover:bg-[#1e39c2] px-2 py-1 rounded-lg ' + (background.bg)}>
+                      <span className="text-lg min-w-[74px]">
+                      {!starsLoaded ? 'loading' : '$' + starsPrice}
+                        </span>
                       <span className="bg-white rounded-full p-1">
                           <img src="./images/stars.png" className="w-[18px]"/>
                       </span>

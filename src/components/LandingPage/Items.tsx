@@ -2,7 +2,7 @@ const Items = () => {
     return (
         <div id="items" className='w-full bg-[#7c12c2]'>
             <div className='flex items-center justify-center'>
-                <div className="relative px-5 max-w-screen-2xl 2xl:max-w-screen-2xl py-20">
+                <div className="relative px-5 max-w-screen-2xl 2xl:max-w-screen-2xl py-14 md:py-28">
                     <div className="md:px-24 flex flex-col items-center">
                         <h2 className="
                             !leading-[3rem] 

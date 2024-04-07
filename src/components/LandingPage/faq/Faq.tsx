@@ -16,7 +16,7 @@ const Faq = () => {
             {isActive ? <IoIosArrowUp className="text-2xl" /> : <IoIosArrowDown className="text-2xl" />}
           </button>
         </div>
-        <div className={(isActive ? "answer active" : "answer") + ' text-lg sm:text-xl text-gray-400/90 pr-10'}>
+        <div className={(isActive ? "answer active" : "answer") + ' text-md sm:text-xl text-gray-200/90 pr-2 md:pr-10'}>
           {props.answer}
         </div>
       </div>
@@ -107,22 +107,22 @@ const Faq = () => {
       question: "Why do people care about NFTs?",
       answer: <Q3/>
     },
-    {
-      id: 3,
-      question: "...and the First Movers are NFTs?",
-      answer: <Q4/>
-    },
-    {
-      id: 4,
-      question: "Give me some key facts!",
-      answer: <Q5/>
-    }
+    // {
+    //   id: 3,
+    //   question: "...and the First Movers are NFTs?",
+    //   answer: <Q4/>
+    // },
+    // {
+    //   id: 4,
+    //   question: "Give me some key facts!",
+    //   answer: <Q5/>
+    // }
   ];
   
 
 
   return (
-    <div id="frequently-asked-questions" className="bg-[#4247d7] flex flex-col py-20">
+    <div id="frequently-asked-questions" className="bg-[#4247d7] flex flex-col py-14 md:py-28">
       <h2 className="
         !leading-[2.7rem] 
         sm:!leading-[3.5rem] 

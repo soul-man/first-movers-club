@@ -1560,9 +1560,9 @@ li {
   list-style: none;
 }
 
-p {
+/* p {
   color: #6f7583;
-}
+} */
 
 
 h1,
@@ -1592,7 +1592,6 @@ p {
   width: 100%;
   margin: 0 auto;
   display: block;
-  color: #eff1f5;
   line-height: 1.6;
 }
 

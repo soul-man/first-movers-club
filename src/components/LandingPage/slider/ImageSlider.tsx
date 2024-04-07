@@ -10,7 +10,7 @@ const IMAGES = [
         imageSrc: "/images/intro-firstmover-hodl.png",
         sliderBg: "intro-fm-yellow",
         bg: "global-fm-yellow",
-        text: "text-black"
+        text: "text-black/80"
     },
     {
         id: 1,
@@ -24,7 +24,7 @@ const IMAGES = [
         imageSrc: "/images/intro-firstmover-miner.png",
         sliderBg: "intro-fm-yellow",
         bg: "global-fm-yellow",
-        text: "text-black"
+        text: "text-black/80"
     },
     {
         id: 3,
@@ -40,13 +40,13 @@ const IMAGES = [
         bg: "global-fm-blue-light",
         text: "text-white"
     },
-    {
-        id: 5,
-        imageSrc: "/images/intro-firstmover-gangsta.png",
-        sliderBg: "intro-fm-red",
-        bg: "global-fm-red",
-        text: "text-white"
-    }
+    // {
+    //     id: 5,
+    //     imageSrc: "/images/intro-firstmover-gangsta.png",
+    //     sliderBg: "intro-fm-red",
+    //     bg: "global-fm-red",
+    //     text: "text-white"
+    // }
   ];
 
 const sliderVariants = {
@@ -111,7 +111,7 @@ const Slider = () => {
     <div className="relative flex flex-col justify-center items-center">
       <div className="
         flex 
-        flex-row 
+        flex-col 
         sm:flex-col 
         justify-center 
         items-center 
@@ -119,18 +119,19 @@ const Slider = () => {
         2xl:items-end 
         md:absolute 
         right-0 
+        md:right-4
         xl:right-0 
         2xl:right-8 
-        gap-12 
+        gap-2 
         md:gap-8"
       >
         <div className="
             relative 
-            w-[300px] 
-            h-[400px] 
-            sm:w-[270px] 
-            sm:h-[350px] 
-            md:w-[300px] 
+            w-[220px] 
+            h-[300px] 
+            sm:w-[350px] 
+            sm:h-[450px] 
+            md:w-[360px] 
             md:h-[500px] 
             lg:w-[400px] 
             lg:h-[500px] 
@@ -161,7 +162,7 @@ const Slider = () => {
             </AnimatePresence>
         </div>
         
-        <div className="flex flex-col sm:flex-row 2xl:mr-10 justify-center items-center gap-2">
+        <div className="flex flex-row sm:flex-row 2xl:mr-10 justify-center items-center gap-0.5 md:gap-2">
             <button className="duration-300 hover:scale-150 rotate-90 sm:rotate-0 text-3xl" onClick={() => swipeToImage(-1)}><RiArrowDropLeftLine /></button>
             {IMAGES.map(image => (
             <div
@@ -173,7 +174,7 @@ const Slider = () => {
             </div>
             ))}
             <button className="duration-300 hover:scale-150 rotate-90 sm:rotate-0 text-3xl" onClick={() => swipeToImage(1)}><RiArrowDropRightLine /></button>
-      </div>
+        </div>
       </div>
 
 

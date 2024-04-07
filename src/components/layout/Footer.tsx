@@ -23,17 +23,17 @@ export default function Footer() {
         <a href="./" className="flex flex-row items-center space-x-3 z-11">
           <span className="px-1.5 py-1.5 text-3xl font-bold bg-yellow-400 rounded-xl text-black/90"><TbAlpha/></span>
           <div className="flex flex-col">
-          <span className="text-xl font-semibold text-white mb-0 pb-0">THE FIRST MOVERS CLUB</span>
-          <span className="text-md font-normal text-white/60">NFT COLLECTION BY SOULMAN</span>
+          <span className="text-lg md:text-xl font-semibold text-white mb-0 pb-0">THE FIRST MOVERS CLUB</span>
+          <span className="text-sm md:text-md font-normal text-white/60">NFT COLLECTION BY SOULMAN</span>
           </div>
         </a>
 
         <div className='pt-2 lg:pt-0'>
           {/* <p className="mb-1 text-md text-gray-200/80 text-center md:text-right mt-3 md:pt-0">&copy; {new Date().getFullYear()} - mint-heaven.xyz</p> */}
           <div className="text-md text-white/60">
-            <div className="flex flex-col md:flex-row text-center mt-3 md:mt-0">
+            <div className="flex flex-col md:flex-row text-center mt-3 text-sm md:text-lg md:mt-0">
               <span className="flex items-center justify-center">
-                made with <FaRegHeart className="ml-2 mr-2 text-green-400 text-xl" />{' '}
+                made with <FaRegHeart className="ml-2 mr-2 text-green-400" />{' '}
               </span>
               <span>
                 build on{' '}
