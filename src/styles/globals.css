@@ -45,6 +45,16 @@ body {
   background-color: #1e39c2;
 }
 
+@media screen and (max-width: 1023px) { 
+  li {
+    margin-left: 0 !important;
+  }
+}
+
+.mobile li {
+  padding-top: 25px;
+}
+
 .intro-fm-yellow {
   --fm-yellow: #C8C022;
   background-color: #1e39c2;
@@ -88,7 +98,7 @@ body {
   background-color: #5ae826;
 }
 
-@media screen and (max-width: 640px) { 
+@media screen and (max-width: 768px) { 
   .intro-fm-yellow {
     background-image: -webkit-linear-gradient(171deg, #1e39c2 0%, #1e39c2 59%, #C8C022 59%, #C8C022 59%);
     background-image: linear-gradient( 171deg, #1e39c2 0%, #1e39c2 59%, #C8C022 59%, #C8C022 59%);

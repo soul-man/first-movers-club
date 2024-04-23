@@ -1,12 +1,30 @@
+import { useEffect } from 'react';
+import { gsap } from "gsap";
+
 const Rarity = () => {
     const url = "images/bg-scenes/bg-rarity.jpg";
+
+    useEffect(() => {
+        gsap.fromTo(".rarity-anim-left", {
+            x: -150,
+            opacity: 0,
+          }, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".rarity-anim-left-trigger",
+            }
+          });
+    }, []);
+
     return (
         <>
             <div id="rarity" className="w-full bg-contain md:bg-cover" style={{ backgroundImage: `url(${url})`}}>
 
                 <div className='flex items-center justify-center min-h-[calc(100vh-70px)]'>
                     <div className='py-14 md:py-28 px-10 sm:px-20 2xl:px-0 max-w-screen-lg'>
-                        <div className='bg-blue-600 border-blue-300 rounded-md border-[6px] md:border-[12px] p-5 md:p-10 mb-5'>
+                        <div className='rarity-anim-left bg-blue-600 border-blue-300 rounded-md border-[6px] md:border-[12px] p-5 md:p-10 mb-5'>
                             <div className="mb-10">
                                 <h2 className="text-left text-2xl md:text-5xl mb-5 uppercase">NFT Collection info</h2>
                                 <p className="text-left text-xl md:text-2xl font-light md:font-extralight">
@@ -14,7 +32,7 @@ const Rarity = () => {
                                     Each part of a First Mover is crafted by hand with the help of Blender 3D.                              
                                 </p>
                             </div>
-                            <div className="flex flex-col md:flex-row gap-10">
+                            <div className="flex flex-col md:flex-row gap-10 rarity-anim-left-trigger">
                                 <div className="w-12/12 md:w-6/12 flex flex-col gap-2">
                                     <h4 className="mb-3 text-2xl md:text-4xl underline">First Movers</h4>
                                     <div className="p-1 px-2 flex flex-row justify-left bg-blue-300/20 rounded-md">

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { gsap } from "gsap";
 import Image from 'next/image';
 import { Tooltip } from 'react-tooltip';
 
@@ -59,13 +60,35 @@ const Personality = () => {
         setIsHidden(true);
       };
 
+    useEffect(() => {
+        gsap.fromTo(".personality-anim-top", {
+            y: -150,
+            opacity: 0,
+          }, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".personality-anim-top-trigger",
+            }
+          });
+
+          gsap.fromTo(".anim-box", {
+            opacity: 0,
+          }, {
+            opacity: 1,
+            duration: 2,
+            scrollTrigger: {
+                trigger: ".scroll-trigger",
+            }
+          });
+    }, []);
     
-    const url = "images/bg-scenes/bg-tara.jpg";
     return (
         <>
             <div id="personality" className='w-full bg-[#1227C2]'>
                 <div className='flex items-center justify-center'>
-                        <div className="px-5 max-w-screen-xl 2xl:max-w-screen-2xl py-14 md:py-28">
+                        <div className="px-5 max-w-screen-xl 2xl:max-w-screen-2xl py-14 md:py-28 personality-anim-top">
                             <div className="flex items-center flex-col gap-4">
 
                                 <div>
@@ -95,13 +118,15 @@ const Personality = () => {
                                         <span className='mx-2 px-2 py-0.5 bg-white text-black rounded-lg font-bold'>1,111</span>
                                         to make every First Mover a masterpiece.
                                     </div>
-                                    <div className="text-xl md:text-3xl mb-5 !leading-[2.3rem] md:!leading-[2.7rem]">
+                                    <div className="text-xl md:text-3xl mb-5 !leading-[2.3rem] md:!leading-[2.7rem] personality-anim-top-trigger">
                                         <span className='px-2 py-0.5 bg-green-400 text-black rounded-lg font-bold'>Level 2</span>{' '}
                                         To make your First Mover even more unique, every NFT has its own unique name. 
                                         The name adds an extra layer of distinction to your First Mover.
                                     </div>
                                 </div>
 {/* 
+
+                                // UPCOMING FEATURE
                                 <Tooltip id="my-tooltip" style={{ backgroundColor: "rgb(0, 255, 30)", color: "#000000", width: "260px", borderRadius: "10px", }} />
 
                                 <div className='group mb-2'>

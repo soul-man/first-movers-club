@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from "gsap";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Faq = () => {
@@ -70,27 +71,6 @@ const Faq = () => {
     );
   };
 
-  const Q4 = () => {
-    return (
-      <>
-        <p className="mb-3">
-          ...
-        </p>
-      </>
-    );
-  };
-
-  const Q5 = () => {
-    return (
-      <>
-        <p className="mb-3">
-        ....
-        </p>
-        
-      </>
-    );
-  };
-
   const questions = [
     {
       id: 0,
@@ -106,24 +86,39 @@ const Faq = () => {
       id: 2,
       question: "Why do people care about NFTs?",
       answer: <Q3/>
-    },
-    // {
-    //   id: 3,
-    //   question: "...and the First Movers are NFTs?",
-    //   answer: <Q4/>
-    // },
-    // {
-    //   id: 4,
-    //   question: "Give me some key facts!",
-    //   answer: <Q5/>
-    // }
+    }
   ];
+
+  useEffect(() => {
+    gsap.fromTo(".faq-anim-top", {
+        y: -150,
+        opacity: 0,
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".faq-anim-trigger",
+        }
+      });
+
+      gsap.fromTo(".faq-anim-bottom", {
+        y: 150,
+        opacity: 0,
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".faq-anim-trigger",
+        }
+      });
+}, []);
   
-
-
   return (
     <div id="frequently-asked-questions" className="bg-[#4247d7] flex flex-col py-14 md:py-28">
       <h2 className="
+        faq-anim-top
         !leading-[2.7rem] 
         sm:!leading-[3.5rem] 
         md:!leading-[4.5rem] 
@@ -142,8 +137,8 @@ const Faq = () => {
       >
         FAQ
       </h2>
-      <p className="text-center text-2xl text-white/70 mb-20">Frequently Asked Questions</p>
-      <section className="faq ">
+      <p className="faq-anim-top text-center text-2xl text-white/70 mb-20">Frequently Asked Questions</p>
+      <section className="faq faq-anim-bottom faq-anim-trigger">
         {questions.map((item: any, index: number) => (
           <Question key={index} question={item.question} answer={item.answer} />
         ))}

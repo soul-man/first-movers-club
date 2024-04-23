@@ -1,52 +1,46 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
+import { gsap } from "gsap";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
-import BackgroundContext from '@/utils/context/sliderBg';
+import BackgroundContext from '@/utils/context/themeContext';
 
 const IMAGES = [
     {
         id: 0,
         imageSrc: "/images/intro-firstmover-hodl.png",
-        sliderBg: "intro-fm-yellow",
-        bg: "global-fm-yellow",
-        text: "text-black/80"
+        sliderBgColor: "intro-fm-yellow",
+        colorPrimary: "global-fm-yellow",
+        textColorSecondary: "text-black/80"
     },
     {
         id: 1,
         imageSrc: "/images/intro-firstmover-cz.png",
-        sliderBg: "intro-fm-red",
-        bg: "global-fm-red",
-        text: "text-white"
+        sliderBgColor: "intro-fm-red",
+        colorPrimary: "global-fm-red",
+        textColorSecondary: "text-white"
     },
     {
         id: 2,
         imageSrc: "/images/intro-firstmover-miner.png",
-        sliderBg: "intro-fm-yellow",
-        bg: "global-fm-yellow",
-        text: "text-black/80"
+        sliderBgColor: "intro-fm-yellow",
+        colorPrimary: "global-fm-yellow",
+        textColorSecondary: "text-black/80"
     },
     {
         id: 3,
         imageSrc: "/images/intro-firstmover-rekt.png",
-        sliderBg: "intro-fm-pink",
-        bg: "global-fm-pink",
-        text: "text-white"
+        sliderBgColor: "intro-fm-pink",
+        colorPrimary: "global-fm-pink",
+        textColorSecondary: "text-white"
     },
     {
         id: 4,
         imageSrc: "/images/intro-firstmover-btfd.png",
-        sliderBg: "intro-fm-blue-light",
-        bg: "global-fm-blue-light",
-        text: "text-white"
-    },
-    // {
-    //     id: 5,
-    //     imageSrc: "/images/intro-firstmover-gangsta.png",
-    //     sliderBg: "intro-fm-red",
-    //     bg: "global-fm-red",
-    //     text: "text-white"
-    // }
+        sliderBgColor: "intro-fm-blue-light",
+        colorPrimary: "global-fm-blue-light",
+        textColorSecondary: "text-white"
+    }
   ];
 
 const sliderVariants = {
@@ -77,9 +71,9 @@ const Slider = () => {
   const swipeToImage = (swipeDirection: any) => {
     setImageCount([imageCount + swipeDirection, swipeDirection])
     const index = wrap(0, IMAGES.length, imageCount + swipeDirection)
-    background.sliderBg = IMAGES[index].sliderBg;
-    background.bg = IMAGES[index].bg;
-    background.text = IMAGES[index].text;
+    background.sliderBgColor = IMAGES[index].sliderBgColor;
+    background.colorPrimary = IMAGES[index].colorPrimary;
+    background.textColorSecondary = IMAGES[index].textColorSecondary;
     setBackground({...background});
   }
 
@@ -101,9 +95,9 @@ const Slider = () => {
       changeDirection = -1
     }
     setImageCount([imageId, changeDirection])
-    background.sliderBg = IMAGES[imageId].sliderBg;
-    background.bg = IMAGES[imageId].bg;
-    background.text = IMAGES[imageId].text;
+    background.sliderBgColor = IMAGES[imageId].sliderBgColor;
+    background.colorPrimary = IMAGES[imageId].colorPrimary;
+    background.textColorSecondary = IMAGES[imageId].textColorSecondary;
     setBackground({...background});
   }
 
@@ -163,21 +157,19 @@ const Slider = () => {
         </div>
         
         <div className="flex flex-row sm:flex-row 2xl:mr-10 justify-center items-center gap-0.5 md:gap-2">
-            <button className="duration-300 hover:scale-150 rotate-90 sm:rotate-0 text-3xl" onClick={() => swipeToImage(-1)}><RiArrowDropLeftLine /></button>
+            <button className="duration-300 hover:scale-150 rotate-0 text-3xl" onClick={() => swipeToImage(-1)}><RiArrowDropLeftLine /></button>
             {IMAGES.map(image => (
             <div
                 key={image.id}
                 onClick={() => skipToImage(image.id)}
-                className="w-9 md:w-8 xl:w-12"
+                className="w-9 md:w-8 xl:w-12 z-1"
             >
-                <img src={image.imageSrc} alt="First Mover" className="duration-300 hover:scale-125" />
+              <img src={image.imageSrc} alt="First Mover" className={'duration-300 ' + (image.id === activeImageIndex ? 'scale-125' : 'hover:scale-125')} />
             </div>
             ))}
-            <button className="duration-300 hover:scale-150 rotate-90 sm:rotate-0 text-3xl" onClick={() => swipeToImage(1)}><RiArrowDropRightLine /></button>
+            <button className="duration-300 hover:scale-150 rotate-0 text-3xl" onClick={() => swipeToImage(1)}><RiArrowDropRightLine /></button>
         </div>
       </div>
-
-
     </div>
   )
 }

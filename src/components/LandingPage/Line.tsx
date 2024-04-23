@@ -1,8 +1,22 @@
+import { useEffect } from 'react';
+import { gsap } from "gsap";
+
 const Line = () => {
     const url = "images/bg-scenes/bg-first-movers.jpg";
 
+    useEffect(() => { 
+        gsap.to(".line_anim", {
+            x: -500,
+            duration: 4,
+            scrollTrigger: {
+                trigger: ".line_anim",
+                scrub: true
+            }
+        });
+      }, []);
+
     return (
-        <div className="h-[175px] md:h-[300px] bg-repeat bg-center bg-cover" style={{ backgroundImage: `url(${url})`}}></div>
+        <div className="line-anim h-[175px] md:h-[300px] bg-repeat bg-center bg-cover" style={{ backgroundImage: `url(${url})`}}></div>
     )
 }
 

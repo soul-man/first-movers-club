@@ -1,16 +1,10 @@
-import axios from 'axios';
 import { endpoints } from '@/utils/config';
 
 export const starsMarketPrice = async () => {
   try {
-    let config = {
-      headers: {
-        api_key: process.env.FM_API_KEY,
-      }
-    }
-    const url = endpoints.price_stars;
-    const price = await axios.get(url, config);
-    return price.data;
+    const data = await fetch(endpoints.price_stars);
+    const json = await data.json();
+    return json[0].price.toFixed(4);;
   } catch (error) {
     console.log('Error: ' + error);
   }

@@ -1,5 +1,3 @@
-import { BsShieldCheck } from "react-icons/bs";
-import Image from "next/image";
 import { useEffect } from 'react';
 import MetaverseReady from '@/components/LandingPage/MetaverseReady';
 import { gsap } from "gsap";
@@ -23,27 +21,27 @@ const Slider = () => {
   }
 
   useEffect(() => {
-      gsap.to(".creators_anim1", {
+      gsap.to(".slider_anim1", {
           x: -500,
-          duration: 3,
+          duration: 4,
           scrollTrigger: {
-              trigger: ".hero__upload .avatars",
+              trigger: ".slider_anim1 .avatars",
               scrub: true
           }
       });
-      gsap.to(".creators_anim2", {
+      gsap.to(".slider_anim2", {
           x: 500,
-          duration: 3,
+          duration: 4,
           scrollTrigger: {
-              trigger: ".hero__upload .avatars",
+              trigger: ".slider_anim2 .avatars",
               scrub: true
           }
       });
-      gsap.to(".creators_anim3", {
+      gsap.to(".slider_anim3", {
           x: -500,
-          duration: 3,
+          duration: 4,
           scrollTrigger: {
-              trigger: ".hero__upload .avatars",
+              trigger: ".slider_anim3 .avatars",
               scrub: true
           }
       });
@@ -56,7 +54,7 @@ const Slider = () => {
 
       {/* <MetaverseReady/> */}
 
-        <div className="flex justify-center creators_anim1">
+        <div className="flex justify-center slider_anim1 avatars">
           {numbers_1.map((index) => (
             <div key={`1${index}`}>
               <div className="w-[140px] h-[140px] md:w-[200px] md:h-[200px]">
@@ -67,7 +65,7 @@ const Slider = () => {
         </div>
 
 
-        <div className="flex justify-center creators_anim2">
+        <div className="flex justify-center slider_anim2 avatars">
           {numbers_2.map((index) => (
             <div key={`1${index}`}>
               <div className="w-[140px] h-[140px] md:w-[200px] md:h-[200px]">
@@ -77,7 +75,7 @@ const Slider = () => {
           ))}
         </div>
 
-        <div className="flex justify-center creators_anim3">
+        <div className="flex justify-center slider_anim3 avatars">
           {numbers_3.map((index) => (
             <div key={`1${index}`}>
               <div className="w-[140px] h-[140px] md:w-[200px] md:h-[200px]">

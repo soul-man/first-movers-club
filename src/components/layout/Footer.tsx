@@ -1,11 +1,27 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from "gsap";
 import { FaRegHeart } from "react-icons/fa6";
 import { TbAlpha } from "react-icons/tb";
 
 export default function Footer() {
+
+  useEffect(() => { 
+    gsap.fromTo(".footer-anim", {
+      y: 50,
+      opacity: 0,
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".footer-anim-trigger",
+    }
+    });
+  }, []);
+
   return (
-    <div className='w-full bg-[#1235c2]'>
-        <footer className="min-[320px]:px-4 xl:px-0 ">
+    <div className='w-full bg-[#1235c2]'> 
+        <footer className="footer-anim min-[320px]:px-4 xl:px-0 ">
       <div className="
         py-5
         md:py-1
@@ -20,7 +36,7 @@ export default function Footer() {
         md:min-h-[10vh]
         z-1"
       >
-        <a href="./" className="flex flex-row items-center space-x-3 z-11">
+        <a href="./" className="footer-anim-trigger flex flex-row items-center space-x-3 z-11">
           <span className="px-1.5 py-1.5 text-3xl font-bold bg-yellow-400 rounded-xl text-black/90"><TbAlpha/></span>
           <div className="flex flex-col">
           <span className="text-lg md:text-xl font-semibold text-white mb-0 pb-0">THE FIRST MOVERS CLUB</span>
