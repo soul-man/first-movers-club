@@ -10,10 +10,11 @@ Demo: [The First Movers Club](https://www.first-movers.club/)
 ## Features
 
 - Modern colorful design
-- Responsive
 - Image slider
-- Audio player
-- Animations
+- Text slider
+- Framer animations
+- Responsive design
+
 
 ## Run the development server
 

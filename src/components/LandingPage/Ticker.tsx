@@ -1,5 +1,3 @@
-import SoundPlayer from './SoundPlayer';
-
 const InfoTicker = () => {
     return (
         <div className='w-full'>
@@ -36,7 +34,7 @@ const InfoTicker = () => {
                                 <span><b>#</b>massive-gains</span>
                                 <span><b>#</b>trader</span>
                                 <span><b>#</b>shrimp</span>
-                                <span><b>#</b>when-lambo?</span>
+                                <span><b>#</b>when-lambo</span>
                                 <span><b>#</b>hodl</span>
                                 <span><b>#</b>mt.gox</span>
                                 <span><b>#</b>bankless</span>
@@ -51,13 +49,10 @@ const InfoTicker = () => {
                                 <span><b>#</b>m00n</span>
                                 <span><b>#</b>51%</span>
                                 <span><b>#</b>farmer</span>
-
-
+                                <span><b>#</b>to-the-m00n</span>
+                                <span><b>#</b>lambos</span>
                             </div>
                         </div>
-
-                        <SoundPlayer />
-
                     </div>
                 </div>
             </div>
