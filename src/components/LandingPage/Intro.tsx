@@ -9,8 +9,30 @@ import BackgroundContext from '@/utils/context/themeContext';
 const Intro = () => {
 
   const {background } = useContext(BackgroundContext);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => { 
+  useEffect(() => {
+    if (!hasAnimated) {
+      if (document.readyState === 'complete') {
+        setIsLoaded(true);
+        runAnimations();
+      } else {
+        window.addEventListener('load', () => {
+          setIsLoaded(true);
+          runAnimations();
+        });
+      }
+    }
+
+    return () => {
+      window.removeEventListener('load', runAnimations);
+    };
+  }, [hasAnimated]);
+
+  const runAnimations = () => {
+    setHasAnimated(true);
+    
     gsap.fromTo(".anim-left", {
       x: -250,
       opacity: 0,
@@ -46,19 +68,19 @@ const Intro = () => {
       opacity: 1,
       duration: 0.5,
     });
-  }, []);
+  };
   
   return (
     <>
       <div className={'w-full duration-300 transition-all ' + (background.sliderBgColor)}>
         <div className='flex justify-center'>
           <div className='flex flex-col justify-start sm:justify-between px-5 max-w-screen-xl 2xl:max-w-screen-2xl min-h-[100vh] gap-2'>
-            <div className='anim-top'>
+            <div className={'anim-top ' + (!isLoaded ? 'opacity-0' : '')}>
               <Header />
             </div>
             <div>
               <div className='relative flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 lg:gap-14 mb-10 sm:mt-0'>
-                  <div className='anim-left relative w-12/12 md:sm:w-7/12 md:pl-5 lg:pl-10'>
+                  <div className={'anim-left relative w-12/12 md:sm:w-7/12 md:pl-5 lg:pl-10 ' + (!isLoaded ? 'opacity-0' : '')}>
                     <p className="text-xl md:text-3xl mb-3 md:mb-2 text-yellow-300"><b>NFT COLLECTION</b></p>
                     <h1 className='
                       mb-6
@@ -126,13 +148,13 @@ const Intro = () => {
                       <MdOutlineRocketLaunch className='text-5xl sm:text-7xl md:text-7xl lg:text-8xl text-blue-300/50 rotate-[-10deg]'/>
                     </div>
                   </div>
-                  <div className='anim-right relative w-12/12 md:w-5/12'>
+                  <div className={'anim-right relative w-12/12 md:w-5/12 ' + (!isLoaded ? 'opacity-0' : '')}>
                     <ImageSlider/>
                   </div>
               </div>
             </div>
             <div className='mb-1'>
-              <div className='anim-bottom hidden xl:block mb-5'>
+              <div className={'anim-bottom hidden xl:block mb-5 ' + (!isLoaded ? 'opacity-0' : '')}>
                 <InfoTicker/>
               </div>
             </div>

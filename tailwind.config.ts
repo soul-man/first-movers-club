@@ -14,7 +14,6 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        grotesk: ['Grotesk', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -44,6 +43,14 @@ export default {
             opacity: '0.4',
             filter: 'none',
           },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideIn: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         shimmer: {
           '0%': {

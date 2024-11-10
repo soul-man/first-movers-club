@@ -99,7 +99,8 @@ const Collection = () => {
                                 alt='First Mover with ahodl bag'
                                 className="w-[300px] lg:w-[400px] xl:w-[500px]"
                                 width={300}
-                                height={400}
+                                height={400} 
+                                priority={true}
                             />
                         </div>
                     </div>
