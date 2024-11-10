@@ -1,30 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  future: {
-    webpack5: true,   
-  },
-  // output: 'export',
-  env: {
-    FM_BASE_URL: process.env.FM_BASE_URL,
-    FM_API_KEY: process.env.FM_API_KEY
-  },
-  eslint: {
-    dirs: ['src'],
-  },
-
   reactStrictMode: true,
-  swcMinify: true,
-
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
-
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
