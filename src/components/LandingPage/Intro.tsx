@@ -9,8 +9,25 @@ import BackgroundContext from '@/utils/context/themeContext';
 const Intro = () => {
 
   const {background } = useContext(BackgroundContext);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => { 
+  useEffect(() => {
+    if (!hasAnimated) {
+      if (document.readyState === 'complete') {
+        runAnimations();
+      } else {
+        window.addEventListener('load', runAnimations);
+      }
+    }
+
+    return () => {
+      window.removeEventListener('load', runAnimations);
+    };
+  }, [hasAnimated]);
+
+  const runAnimations = () => {
+    setHasAnimated(true);
+    
     gsap.fromTo(".anim-left", {
       x: -250,
       opacity: 0,
@@ -46,7 +63,7 @@ const Intro = () => {
       opacity: 1,
       duration: 0.5,
     });
-  }, []);
+  };
   
   return (
     <>

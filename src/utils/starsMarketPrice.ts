@@ -1,4 +1,3 @@
-import { endpoints } from '@/utils/config';
 import axios from 'axios';
 
 export const starsMarketPrice = async () => {

@@ -26,9 +26,8 @@ const Slider = () => {
       duration: 4,
       ease: "none",
       scrollTrigger: {
-        trigger: ".slider_anim1",
-        endTrigger: ".slider_anim3",
-        start: "top bottom",
+        trigger: ".slider_container",
+        start: "top center",
         end: "bottom top",
         scrub: 1,
       }
@@ -39,9 +38,8 @@ const Slider = () => {
       duration: 4,
       ease: "none",
       scrollTrigger: {
-        trigger: ".slider_anim1",
-        endTrigger: ".slider_anim3",
-        start: "top bottom",
+        trigger: ".slider_container",
+        start: "top center",
         end: "bottom top",
         scrub: 1,
       }
@@ -52,9 +50,8 @@ const Slider = () => {
       duration: 4,
       ease: "none",
       scrollTrigger: {
-        trigger: ".slider_anim1",
-        endTrigger: ".slider_anim3",
-        start: "top bottom",
+        trigger: ".slider_container",
+        start: "top center",
         end: "bottom top",
         scrub: 1,
       }
